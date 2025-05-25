@@ -1,0 +1,89 @@
+{% extends "models/base.j2" %}
+
+{% block title %}Messages - Fête des Mères{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="section-title">
+            <i class="fas fa-envelope-heart text-primary"></i>
+            Messages d'amour pour toi
+        </h1>
+        
+        <div class="row">
+            {% for message in maman.messages %}
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-lg">
+                    <div class="card-body p-4 text-center">
+                        <i class="fas fa-quote-left text-primary mb-3" style="font-size: 2em;"></i>
+                        <p class="card-text lead fst-italic">{{ message }}</p>
+                        <i class="fas fa-heart heart-decoration"></i>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-header bg-gradient text-white text-center py-4" style="background: linear-gradient(45deg, #ff69b4, #ff1493) !important;">
+                        <h3 class="mb-0">
+                            <i class="fas fa-pen-fancy"></i>
+                            Une lettre spéciale pour toi
+                        </h3>
+                    </div>
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <h4 class="text-primary">Chère Maman,</h4>
+                        </div>
+                        
+                        <p class="lead text-justify mb-4">
+                            En cette journée si spéciale, je veux prendre le temps de te dire combien tu comptes pour moi. 
+                            Malgré l'impression que je peux parfois
+                            Tu es bien plus qu'une mère, tu es mon héroïne, ma confidente, ma source d'inspiration et de joie.
+                        </p>
+                        
+                        <p class="mb-4">
+                            Tu as toujours été là pour moi. Dans les moments de joie comme de peines, 
+                            tu as su m'accompagner avec une patience et un amour infinis. Même dans les moments les plus difficiles,
+                            tu as su trouver les mots justes pour me réconforter et me donner la force d'avancer.
+                        </p>
+                        
+                        <p class="mb-4">
+                            Tu m'as appris les valeurs importantes de la vie : la générosité, le respect, la persévérance. 
+                            Tu m'as montré qu'avec un tant soit peu d'amour et de détermination, on peut surmonter tous les obstacles.
+                        </p>
+                        
+                        <p class="mb-4">
+                            Aujourd'hui, je veux te remercier pour tous ces sacrifices que tu as faits pour moi, 
+                            souvent en silence. Pour toutes ces nuits blanches, ces inquiétudes, ces joies partagées. 
+                            Pour avoir cru en moi, et être restée positive même quand tout semblait perdu.
+                        </p>
+                        
+                        <div class="text-center mt-5">
+                            <p class="h5 text-primary mb-4">
+                                L'amour que je ressent pour toi est trop complexe pour pouvoir mettre de simples mots pour l'exprimer. c'est culcul, mais c'est vrai.
+                            </p>
+                            <p class="fw-bold">
+                                Bonne fête des mères, ma maman !
+                            </p>
+                            <div class="mt-4">
+                                <i class="fas fa-heart heart-decoration me-2"></i>
+                                <span class="text-primary">Ton casse-couilles préféré qui t'aime</span>
+                                <i class="fas fa-heart heart-decoration ms-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="{{ url_for('accueil') }}" class="btn btn-primary btn-lg">
+                <i class="fas fa-home"></i> Retour à l'accueil
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

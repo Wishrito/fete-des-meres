@@ -1,0 +1,60 @@
+{% extends "models/base.j2" %}
+
+{% block title %}Souvenirs - Fête des Mères{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="section-title">
+            <i class="fas fa-clock accent-color"></i>
+            Quelques souvenirs qui comptent
+        </h1>
+
+        <div class="timeline">
+            {% for souvenir in maman.souvenirs %}
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-5">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 text-center">
+                                    <div class="badge bg-primary rounded-pill p-3 mb-3" style="font-size: 1.2em;">
+                                        {{ souvenir.annee }}
+                                    </div>
+                                    <i class="fas fa-heart text-danger" style="font-size: 2em;"></i>
+                                </div>
+                                <div class="col-md-9">
+                                    <h4 class="text-primary mb-3">{{ souvenir.titre }}</h4>
+                                    <p class="lead text-muted">{{ souvenir.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card border-0 shadow-lg bg-gradient"
+                    style="background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 100%);">
+                    <div class="card-body p-5 text-center">
+                        <h3 class="accent-color mb-4">
+                            <i class="fas fa-forward"></i>
+                            Et l'aventure continue...
+                        </h3>
+                        <p class="lead">
+                            Chaque année qui passe, notre relation évolue et s'enrichit.
+                            Merci de m'accompagner dans cette vie d'adulte qui commence.
+                        </p>
+                        <div class="mt-4">
+                            <span class="fw-bold accent-color">Avec toute mon affection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
